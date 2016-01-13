@@ -1,0 +1,36 @@
+OASISFormat: 0.4
+Name:        bap
+Version:     0.1
+Synopsis:    Lwt in a Janestreet Core style
+Authors:     BAP Team
+Maintainers: Ivan Gotovchits <ivg@ieee.org>
+License:     MIT
+Copyrights:  (C) 2014 Carnegie Mellon University
+Plugins:     META (0.4)
+AlphaFeatures: ocamlbuild_more_args
+BuildTools: ocamlbuild, camlp4o
+BuildDepends:
+              bin_prot.syntax,
+              camlp4,
+              comparelib.syntax,
+              core_kernel,
+              enumerate.syntax,
+              faillib.syntax,
+              fieldslib.syntax,
+              herelib.syntax,
+              pa_ounit.syntax,
+              sexplib.syntax,
+              variantslib.syntax
+
+Library core_lwt
+  Path:           lib
+  CompiledObject: best
+  BuildDepends:   lwt, lwt.unix, lwt.log
+  Modules:        Core_lwt,
+                  Core_lwt_basic,
+                  Core_lwt_container,
+                  Core_lwt_container_intf,
+                  Core_lwt_extra,
+                  Core_lwt_or_error,
+                  Core_lwt_pool,
+                  Core_lwt_stream
