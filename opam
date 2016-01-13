@@ -1,0 +1,30 @@
+opam-version: "1.2"
+name: "core-lwt"
+version: "master"
+maintainer: "Ivan Gotovchits <ivg@ieee.org>"
+authors: "BAP Team"
+homepage: "https://github.com/BinaryAnalysisPlatform/core-lwt/"
+bug-reports: "https://github.com/BinaryAnalysisPlatform/core-lwt/issues"
+dev-repo: "git://github.com/BinaryAnalysisPlatform/core-lwt/"
+license: "MIT"
+build: [
+  ["oasis" "setup"]
+  ["ocaml" "setup.ml" "--prefix" prefix]
+  ["ocaml" "setup.ml" "-build"]
+]
+
+install: [
+  ["ocaml" "setup.ml" "-install"]
+]
+
+remove: [
+  ["ocamlfind" "remove" "core_lwt"]
+]
+
+depends: [
+    "lwt"
+    "lwt.unix"
+    "lwt.log"
+]
+
+available: [ocaml-version >= "4.01.0"]
