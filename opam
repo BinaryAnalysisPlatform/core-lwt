@@ -22,6 +22,7 @@ remove: [
 ]
 
 depends: [
+    "core_kernel"
     "lwt"
     "lwt.unix"
     "lwt.log"
