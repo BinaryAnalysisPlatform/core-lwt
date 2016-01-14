@@ -9,7 +9,7 @@ dev-repo: "git://github.com/BinaryAnalysisPlatform/core-lwt/"
 license: "MIT"
 build: [
   ["oasis" "setup"]
-  ["ocaml" "setup.ml" "--prefix" prefix]
+  ["ocaml" "setup.ml" "-configure" "--prefix" prefix]
   ["ocaml" "setup.ml" "-build"]
 ]
 
@@ -22,10 +22,10 @@ remove: [
 ]
 
 depends: [
+    "base-unix"
+    "base-threads"
     "core_kernel"
     "lwt"
-    "lwt.unix"
-    "lwt.log"
 ]
 
 available: [ocaml-version >= "4.01.0"]
