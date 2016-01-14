@@ -1,4 +1,4 @@
-type how = [ `Parallel | `Sequential ] with sexp_of
+type how = [ `Parallel | `Sequential ]
 
 module type Monad_sequence = sig
   type 'a monad
