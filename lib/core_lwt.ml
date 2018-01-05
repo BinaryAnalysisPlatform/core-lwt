@@ -9,7 +9,7 @@ module Std = struct
     include Core_lwt_extra
     module Main = Lwt_main
     module Unix = Lwt_unix
-    module Chan = Lwt_chan
+    module Chan = Lwt_io
     module Mutex = Lwt_mutex
     module IO = Lwt_io
     module Pool = Core_lwt_pool

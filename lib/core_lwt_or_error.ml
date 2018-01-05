@@ -4,7 +4,7 @@ open Core_lwt_container
 
 module Basic = struct
   type 'a t = 'a Or_error.t Lwt.t
-  let bind m f =
+  let bind m ~f =
     Lwt.bind m (function
         | Ok r -> f r
         | Error _ as err -> Lwt.return err)
