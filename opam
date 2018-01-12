@@ -25,8 +25,8 @@ depends: [
     "oasis" {build & >= "0.4.0"}
     "base-unix"
     "base-threads"
-    "core_kernel" { >= "v0.9.0"}
-    "lwt"
+    "core_kernel" { >= "113.33.00" & < "113.34.00" }
+    "lwt" { >= "3.0.0"}
 ]
 
 available: [ocaml-version >= "4.01.0"]
