@@ -19,8 +19,9 @@ type 'a t
     otherwise. *)
 val create :
   int ->
-  ?check : ('a -> (bool -> unit) -> unit) ->
   ?validate : ('a -> bool Lwt.t) ->
+  ?check : ('a -> (bool -> unit) -> unit) ->
+  ?dispose : ('a -> unit Lwt.t) ->
   (unit -> 'a Lwt.t) -> 'a t
 
 val use : 'a t -> f:('a -> 'b Lwt.t) -> 'b Lwt.t
