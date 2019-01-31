@@ -1,4 +1,4 @@
-open Core_kernel.Std
+open Core_kernel
 open Core_lwt_container_intf
 
 type 'a t = 'a Or_error.t Lwt.t

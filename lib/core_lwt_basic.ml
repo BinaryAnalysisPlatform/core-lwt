@@ -1,4 +1,4 @@
-open Core_kernel.Std
+open Core_kernel
 
 type 'a t = 'a Lwt.t
 include Monad.Make(struct

@@ -1,4 +1,4 @@
-open Core_kernel.Std
+open Core_kernel
 
 module Lift_sequence(M : Monad) = struct
   open M
@@ -135,7 +135,8 @@ struct
   module Seq = Lift_sequence(M)
   open Seq
   open T
-  open M
+
+  let (>>|) = M.(>>|)
 
   type 'a monad = 'a M.t
   type 'a t = 'a T.t
