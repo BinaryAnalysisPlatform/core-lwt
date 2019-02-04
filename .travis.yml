@@ -1,5 +1,5 @@
 language: c
-install: wget https://raw.githubusercontent.com/ocaml/ocaml-travisci-skeleton/master/.travis-opam.sh
+install: wget https://raw.githubusercontent.com/ocaml/ocaml-ci-scripts/master/.travis-opam.sh
 script: bash -ex .travis-opam.sh
 sudo: false
 addons:
@@ -20,4 +20,4 @@ addons:
     - aspcud
 
 env:
-  - FORK_USER=talex5 FORK_BRANCH=containers OPAMYES=true PACKAGE=core-lwt OCAML_VERSION=4.03.0 OPAM_SWITCH=$OCAML_VERSION TESTS=false
+  - OPAMYES=true PACKAGE=core-lwt OCAML_VERSION=4.05 TESTS=false EXTRA_REMOTES=git+https://github.com/BinaryAnalysisPlatform/opam-repository#testing

@@ -1,4 +1,4 @@
-open Core_kernel.Std
+open Core_kernel
 open Core_lwt_container_intf
 open Lwt_stream
 
@@ -162,10 +162,10 @@ val get_available_up_to : int -> 'a t -> 'a list
 (** [is_empty st] returns whether the given stream is empty *)
 val is_empty : 'a t -> bool Lwt.t
 
-val on_terminate : 'a t -> (unit -> unit) -> unit
 (** [on_terminate st f] executes [f] when the end of the stream [st]
     is reached. Note that the stream may still contains elements if
     {!peek} or similar was used. *)
+val on_terminate : 'a t -> (unit -> unit) -> unit
 
 (** {2 Stream transversal} *)
 
