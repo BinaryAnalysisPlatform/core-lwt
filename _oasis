@@ -1,6 +1,6 @@
 OASISFormat: 0.4
 Name:        bap
-Version:     0.1
+Version:     0.3
 Synopsis:    Lwt in a Janestreet Core style
 Authors:     BAP Team
 Maintainers: Ivan Gotovchits <ivg@ieee.org>
@@ -13,7 +13,7 @@ BuildTools: ocamlbuild
 Library core_lwt
   Path:           lib
   CompiledObject: best
-  BuildDepends:   core_kernel, lwt, lwt.unix, lwt.log
+  BuildDepends:   core_kernel, lwt, lwt.unix
   Modules:        Core_lwt,
                   Core_lwt_basic,
                   Core_lwt_container,
