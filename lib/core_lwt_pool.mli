@@ -6,6 +6,7 @@
 *)
 
 type 'a t
+
 (** [create n ?check ?validate f] creates a new pool with at most
     [n] members. [f] is the function to use to create a new pool
     member.

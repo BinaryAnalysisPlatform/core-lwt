@@ -1,6 +1,4 @@
 open Core_kernel
-open Core_lwt_container_intf
-open Lwt_stream
 
 (** Data streams *)
 

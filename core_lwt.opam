@@ -1,5 +1,4 @@
 opam-version: "2.0"
-name: "core-lwt"
 version: "master"
 maintainer: "Ivan Gotovchits <ivg@ieee.org>"
 authors: "BAP Team"
@@ -7,27 +6,16 @@ homepage: "https://github.com/BinaryAnalysisPlatform/core-lwt/"
 bug-reports: "https://github.com/BinaryAnalysisPlatform/core-lwt/issues"
 dev-repo: "git://github.com/BinaryAnalysisPlatform/core-lwt/"
 license: "MIT"
-build: [
-  ["oasis" "setup"]
-  ["ocaml" "setup.ml" "-configure" "--prefix" prefix]
-  ["ocaml" "setup.ml" "-build"]
-]
-
-install: [
-  ["ocaml" "setup.ml" "-install"]
-]
-
-remove: [
-  ["ocamlfind" "remove" "core_lwt"]
-]
+build: ["dune" "build" "-p" name "-j" jobs]
 
 depends: [
     "ocaml" {>= "4.04.1"}
-    "oasis" {build & >= "0.4.0"}
+    "dune" {build & >= "1.11.0"}
     "base-unix"
     "base-threads"
     "core_kernel" {>= "v0.11" & < "v0.12"}
     "lwt" { >= "4.0.0" & < "5.0.0"}
+    "stdlib-shims"
 ]
 synopsis: "Lwt library wrapper in the Janestreet core style"
 description: """

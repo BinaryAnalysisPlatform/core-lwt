@@ -72,9 +72,7 @@ module Lift_list(M : Monad) = struct
   module Sequence = Lift_sequence(M)
   open M
 
-  type 'a t = 'a List.t
-
-  let ignore x = x >>| Pervasives.ignore
+  let ignore x = x >>| Stdlib.ignore
 
   let foldi t ~init ~f  =
     Sequence.foldi (Sequence.of_list t) ~init ~f
@@ -138,7 +136,6 @@ struct
 
   let (>>|) = M.(>>|)
 
-  type 'a monad = 'a M.t
   type 'a t = 'a T.t
 
   let foldi t ~init ~f = foldi ~init (to_sequence t) ~f

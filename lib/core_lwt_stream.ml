@@ -1,12 +1,8 @@
 open Core_kernel
-open Core_lwt_container_intf
-open Lwt
-
 
 module Lwt_or_error = Core_lwt_or_error
 
 include Lwt_stream
-
 
 let wrap_push push =
   (); fun msg -> Or_error.try_with (fun () -> push msg)
