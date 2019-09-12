@@ -1,0 +1,10 @@
+(library
+  (name core_lwt)
+  (public_name core_lwt)
+  (wrapped false)
+  (modules core_lwt core_lwt_basic core_lwt_container core_lwt_container_intf core_lwt_extra core_lwt_or_error core_lwt_pool core_lwt_stream)
+  (libraries core_kernel lwt lwt.unix stdlib-shims))
+
+(env
+  (dev
+    (flags (:standard -warn-error -3))))
